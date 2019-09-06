@@ -24,7 +24,7 @@ end
 class Orc < Raca
     # attr_accessor :nome_raca
     def initialize
-        @Nome_raca = 'Orc'
+        @nome_raca = 'Orc'
         @vida = 15
         @ataque = 12
         @defesa = 5
