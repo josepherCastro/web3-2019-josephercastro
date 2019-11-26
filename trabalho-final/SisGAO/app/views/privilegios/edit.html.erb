@@ -1,0 +1,19 @@
+<% content_for :title do %>
+  Editando Privilegio
+<% end %>
+
+<div class="page-header">
+  <h1>Editando Privilegio</h1>
+  <div>
+    <%= link_to @privilegio, class: 'btn btn-info' do %>
+      <%= icon 'fas', 'eye' %>
+      Ver
+    <% end %>
+    <%= link_to privilegios_path, class: 'btn btn-outline-secondary' do %>
+      <%= icon 'fas', 'bars' %>
+      Voltar
+    <% end %>
+  </div>
+</div>
+
+<%= render 'form' %>
