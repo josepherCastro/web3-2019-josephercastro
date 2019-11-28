@@ -1,0 +1,19 @@
+<% content_for :title do %>
+  Editando Material
+<% end %>
+
+<div class="page-header">
+  <h1>Editando Material</h1>
+  <div>
+    <%= link_to @material, class: 'btn btn-info' do %>
+      <%= icon 'fas', 'eye' %>
+      Ver
+    <% end %>
+    <%= link_to materials_path, class: 'btn btn-outline-secondary' do %>
+      <%= icon 'fas', 'bars' %>
+      Voltar
+    <% end %>
+  </div>
+</div>
+
+<%= render 'form' %>

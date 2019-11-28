@@ -1,0 +1,23 @@
+<% content_for :title do %>
+  Detalhes de Unidade medida
+<% end %>
+
+<div class="page-header">
+  <h1>Detalhes de Unidade medida</h1>
+  <div>
+    <%= link_to edit_unidade_medida_path(@unidade_medida), class: 'btn btn-success' do %>
+      <%= icon 'fas', 'edit' %>
+      Editar
+    <% end %>
+    <%= link_to unidade_medidas_path, class: 'btn btn-outline-secondary' do %>
+      <%= icon 'fas', 'bars' %>
+      Voltar
+    <% end %>
+  </div>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Nome:</dt>
+  <dd><%= @unidade_medida.nome %></dd>
+
+</dl>

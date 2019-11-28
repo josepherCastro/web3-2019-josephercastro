@@ -1,0 +1,38 @@
+<% content_for :title do %>
+  Detalhes de Material
+<% end %>
+
+<div class="page-header">
+  <h1>Detalhes de Material</h1>
+  <div>
+    <%= link_to edit_material_path(@material), class: 'btn btn-success' do %>
+      <%= icon 'fas', 'edit' %>
+      Editar
+    <% end %>
+    <%= link_to materials_path, class: 'btn btn-outline-secondary' do %>
+      <%= icon 'fas', 'bars' %>
+      Voltar
+    <% end %>
+  </div>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Nome:</dt>
+  <dd><%= @material.nome %></dd>
+
+  <dt>Quantidademinima:</dt>
+  <dd><%= @material.quantidadeMinima %></dd>
+
+  <dt>Quantidade:</dt>
+  <dd><%= @material.quantidade %></dd>
+
+  <dt>Devolutivo:</dt>
+  <dd><%= @material.devolutivo %></dd>
+
+  <dt>Unidademedida:</dt>
+  <dd><%= @material.UnidadeMedida %></dd>
+
+  <dt>Fornecedor:</dt>
+  <dd><%= @material.Fornecedor %></dd>
+
+</dl>

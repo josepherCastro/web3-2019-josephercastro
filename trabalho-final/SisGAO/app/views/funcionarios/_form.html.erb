@@ -1,0 +1,15 @@
+
+<%= simple_form_for @funcionario do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :matricula %>
+    <%= f.input :nome %>
+    <%= f.input :setor %>
+    <%= f.input :cargo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, f.object.new_record? ? 'Criar Funcionario' : 'Atualizar Funcionario', class: 'btn btn-primary btn-lg' %>
+  </div>
+<% end %>

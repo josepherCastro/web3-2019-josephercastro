@@ -10,11 +10,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_161351) do
+ActiveRecord::Schema.define(version: 2019_11_28_145658) do
+
+  create_table "devolucaos", force: :cascade do |t|
+    t.float "quantidade"
+    t.integer "Retirada_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["Retirada_id"], name: "index_devolucaos_on_Retirada_id"
+  end
+
+  create_table "fornecedors", force: :cascade do |t|
+    t.integer "cnpj"
+    t.string "nome"
+    t.string "telefone"
+    t.string "endereco"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "funcionarios", force: :cascade do |t|
+    t.integer "matricula"
+    t.string "nome"
+    t.string "setor"
+    t.integer "cargo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.string "nome"
+    t.float "quantidadeMinima"
+    t.float "quantidade"
+    t.boolean "devolutivo"
+    t.integer "UnidadeMedida_id", null: false
+    t.integer "Fornecedor_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["Fornecedor_id"], name: "index_materials_on_Fornecedor_id"
+    t.index ["UnidadeMedida_id"], name: "index_materials_on_UnidadeMedida_id"
+  end
 
   create_table "privilegios", force: :cascade do |t|
     t.integer "tipo"
     t.string "descricao"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "retiradas", force: :cascade do |t|
+    t.float "quantidade"
+    t.integer "Material_id", null: false
+    t.integer "Funcionario_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["Funcionario_id"], name: "index_retiradas_on_Funcionario_id"
+    t.index ["Material_id"], name: "index_retiradas_on_Material_id"
+  end
+
+  create_table "unidade_medidas", force: :cascade do |t|
+    t.string "nome"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,4 +87,9 @@ ActiveRecord::Schema.define(version: 2019_11_26_161351) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "devolucaos", "Retiradas"
+  add_foreign_key "materials", "Fornecedors"
+  add_foreign_key "materials", "UnidadeMedidas"
+  add_foreign_key "retiradas", "Funcionarios"
+  add_foreign_key "retiradas", "Materials"
 end

@@ -1,0 +1,19 @@
+<% content_for :title do %>
+  Editando Unidade medida
+<% end %>
+
+<div class="page-header">
+  <h1>Editando Unidade medida</h1>
+  <div>
+    <%= link_to @unidade_medida, class: 'btn btn-info' do %>
+      <%= icon 'fas', 'eye' %>
+      Ver
+    <% end %>
+    <%= link_to unidade_medidas_path, class: 'btn btn-outline-secondary' do %>
+      <%= icon 'fas', 'bars' %>
+      Voltar
+    <% end %>
+  </div>
+</div>
+
+<%= render 'form' %>

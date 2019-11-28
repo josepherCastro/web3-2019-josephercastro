@@ -1,0 +1,13 @@
+<% content_for :title do %>
+  Novo Retirada
+<% end %>
+
+<div class="page-header">
+  <h1>Novo Retirada</h1>
+  <%= link_to retiradas_path, class: 'btn btn-outline-secondary' do %>
+    <%= icon 'fas', 'bars' %>
+    Voltar
+  <% end %>
+</div>
+
+<%= render 'form' %>

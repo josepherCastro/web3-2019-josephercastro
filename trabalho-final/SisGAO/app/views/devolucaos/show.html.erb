@@ -1,0 +1,26 @@
+<% content_for :title do %>
+  Detalhes de Devolucao
+<% end %>
+
+<div class="page-header">
+  <h1>Detalhes de Devolucao</h1>
+  <div>
+    <%= link_to edit_devolucao_path(@devolucao), class: 'btn btn-success' do %>
+      <%= icon 'fas', 'edit' %>
+      Editar
+    <% end %>
+    <%= link_to devolucaos_path, class: 'btn btn-outline-secondary' do %>
+      <%= icon 'fas', 'bars' %>
+      Voltar
+    <% end %>
+  </div>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Quantidade:</dt>
+  <dd><%= @devolucao.quantidade %></dd>
+
+  <dt>Retirada:</dt>
+  <dd><%= @devolucao.Retirada %></dd>
+
+</dl>

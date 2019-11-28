@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  matricula: 1
+  nome: MyString
+  setor: MyString
+  cargo: 1
+
+two:
+  matricula: 1
+  nome: MyString
+  setor: MyString
+  cargo: 1

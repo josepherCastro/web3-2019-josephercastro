@@ -1,2 +1,0 @@
-class Privilegio < ApplicationRecord
-end
