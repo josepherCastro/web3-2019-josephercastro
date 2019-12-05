@@ -1,5 +1,6 @@
 class DevolucaosController < ApplicationController
   before_action :set_devolucao, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /devolucaos
   # GET /devolucaos.json

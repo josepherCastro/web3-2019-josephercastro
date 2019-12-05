@@ -6,7 +6,7 @@
     <%= f.input :matricula %>
     <%= f.input :nome %>
     <%= f.input :setor %>
-    <%= f.input :cargo %>
+    <%= f.input :cargo, collection: @cargos %>
   </div>
 
   <div class="form-actions">

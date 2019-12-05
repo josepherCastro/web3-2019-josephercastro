@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 2019_11_28_145658) do
     t.string "nome"
     t.string "setor"
     t.integer "cargo"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_funcionarios_on_user_id"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -50,13 +52,6 @@ ActiveRecord::Schema.define(version: 2019_11_28_145658) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["Fornecedor_id"], name: "index_materials_on_Fornecedor_id"
     t.index ["UnidadeMedida_id"], name: "index_materials_on_UnidadeMedida_id"
-  end
-
-  create_table "privilegios", force: :cascade do |t|
-    t.integer "tipo"
-    t.string "descricao"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "retiradas", force: :cascade do |t|
@@ -88,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_145658) do
   end
 
   add_foreign_key "devolucaos", "Retiradas"
+  add_foreign_key "funcionarios", "users"
   add_foreign_key "materials", "Fornecedors"
   add_foreign_key "materials", "UnidadeMedidas"
   add_foreign_key "retiradas", "Funcionarios"

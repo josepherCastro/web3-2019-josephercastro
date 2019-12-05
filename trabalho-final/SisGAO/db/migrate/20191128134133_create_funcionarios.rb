@@ -5,7 +5,7 @@ class CreateFuncionarios < ActiveRecord::Migration[6.0]
       t.string :nome
       t.string :setor
       t.integer :cargo
-
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

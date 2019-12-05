@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :devolucaos
   resources :retiradas
   resources :materials
@@ -8,5 +9,8 @@ Rails.application.routes.draw do
   devise_for :users
   # # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  # root to: "bars#index"
+  get 'homes/index'  
+  # get "home/index"
+  root to: "retiradas#index"
 end
+# ruby ./bin/webpack-dev-server

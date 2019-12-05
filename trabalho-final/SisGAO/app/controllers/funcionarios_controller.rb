@@ -15,6 +15,8 @@ class FuncionariosController < ApplicationController
   # GET /funcionarios/new
   def new
     @funcionario = Funcionario.new
+    @cargos = Funcionario.cargos.keys
+    @cargos = @cargos - [:admin.to_s] unless current_user.funcionario.admin?
   end
 
   # GET /funcionarios/1/edit
